@@ -6,7 +6,7 @@ import characters.Hero;
 public class Mage extends Hero {
     public Mage(String name, int health) {
         super(name, health);
-        super.damage = 50;
+        damage = 50;
     }
 
     public void healing(Hero hero) {
@@ -17,6 +17,6 @@ public class Mage extends Hero {
     @Override
     public void attackEnemy(Enemy enemy) {
         enemy.takeDamage(damage);
-        System.out.printf("Mage %s attacks the enemy\n", super.getName());
+        System.out.printf("Mage %s attacks %s\n", super.getName(), enemy.getName());
     }
 }

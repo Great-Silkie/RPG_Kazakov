@@ -4,7 +4,7 @@ public class Archer extends Hero {
 
     public Archer(String name, int health) {
         super(name, health);
-        super.damage = 15;
+        damage = 15;
     }
 
     public void multipleAttack(Enemy enemy) {
@@ -16,6 +16,6 @@ public class Archer extends Hero {
     @Override
     public void attackEnemy(Enemy enemy) {
         enemy.takeDamage(damage);
-        System.out.printf("Archer %s attacks the enemy\n", super.getName());
+        System.out.printf("Archer %s attacks %s\n", super.getName(), enemy.getName());
     }
 }

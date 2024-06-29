@@ -7,7 +7,7 @@ public class Warrior extends Hero {
     private boolean shield = false;
     public Warrior(String name, int health) {
         super(name, health);
-        super.damage = 30;
+        damage = 30;
     }
 
     public void shieldUp() {
@@ -25,6 +25,6 @@ public class Warrior extends Hero {
     @Override
     public void attackEnemy(Enemy enemy) {
         enemy.takeDamage(damage);
-        System.out.printf("Warrior %s attacks the enemy\n", super.getName());
+        System.out.printf("Warrior %s attacks %s\n", super.getName(), enemy.getName());
     }
 }

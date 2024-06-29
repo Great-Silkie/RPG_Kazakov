@@ -1,10 +1,9 @@
 package characters;
 
-import characters.Hero;
-
-public class Enemy implements Mortal {
+public abstract class Enemy implements Mortal {
+    protected String name;
     private int health;
-    private int damage = 10;
+    protected int damage;
 
     public Enemy(int health) {
         this.health = health;
@@ -22,20 +21,12 @@ public class Enemy implements Mortal {
         setHealth(this.health - damage);
     }
 
-    public void attackHero(Hero hero) {
-        hero.takeDamage(damage);
-        System.out.printf("Hero %s is attacked back from the enemy\n", hero.getName());
-    }
+    public abstract void attackHero(Hero hero);
 
-    public void attackHero(Warrior warrior) {
-        if (warrior.isShield()) {
-            warrior.setShield(false);
-            System.out.printf("%s defended himself with a shield\n", warrior.getName());
-        }
-        else {
-            warrior.takeDamage(damage);
-            System.out.printf("Hero %s is attacked back from the enemy\n", warrior.getName());
-        }
+    public abstract void attackHero(Warrior warrior);
+
+    public String getName() {
+        return name;
     }
 
     @Override

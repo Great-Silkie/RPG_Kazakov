@@ -8,7 +8,7 @@ public class BattleGround {
 //        battle(gnom, ork);
 
         Archer elf = new Archer("Legolas", 50);
-        Enemy barbarian = new Enemy(100);
+        Enemy barbarian = new Zombie(100);
 
         elf.multipleAttack(barbarian);
         battle(elf, barbarian);
